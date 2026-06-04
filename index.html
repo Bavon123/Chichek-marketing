@@ -1,3 +1,5 @@
+Kodi yote kamili imekusanywa na kuunganishwa pamoja kwenye ukurasa mmoja tu hapa chini. Sehemu zote za bidhaa na id zake ziko ndani ya faili hili moja ili iwe rahisi sana kwako kuzinakili kwa pamoja:
+
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -15,20 +17,22 @@
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; }
         .cart-icon { position: relative; cursor: pointer; font-size: 22px; color: var(--primary); }
         .cart-count { position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 7px; font-size: 12px; font-weight: bold; }
-        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; margin-top: 70px; animation: fadeIn 1.5s ease-out; }
+        .hero { height: 75vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; margin-top: 70px; animation: fadeIn 1.5s ease-out; }
         .hero h1 { font-size: 48px; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .hero p { font-size: 20px; margin-bottom: 30px; max-width: 600px; }
-        .btn { background: var(--primary); color: white; padding: 12px 30px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; box-shadow: 0 4px 15px rgba(230,126,34,0.4); }
+        .btn { background: var(--primary); color: white; padding: 12px 30px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; box-shadow: 0 4px 15px rgba(230,126,34,0.4); display: inline-flex; align-items: center; gap: 10px; }
         .btn:hover { background: #d35400; transform: translateY(-3px); }
-        .section-title { text-align: center; margin: 60px 0 40px; font-size: 32px; color: var(--dark); position: relative; }
+        .section-title { text-align: center; margin: 60px 0 40px; font-size: 32px; color: var(--dark); }
         .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--primary); margin: 10px auto 0; border-radius: 2px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 8% 60px; }
-        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; padding-bottom: 25px; transform: translateY(50px); opacity: 0; animation: slideUp 0.8s forwards; }
-        .product-card:hover { transform: translateY(-10px) !important; box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .product-img { width: 100%; height: 230px; object-fit: cover; }
-        .product-card h3 { margin: 20px 0 10px; font-size: 22px; color: var(--dark); }
-        .product-card p { color: #7f8c8d; font-size: 14px; padding: 0 20px; margin-bottom: 15px; }
-        .price { font-size: 20px; font-weight: bold; color: var(--secondary); margin-bottom: 20px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; padding: 0 8% 60px; }
+        .product-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.08); text-align: center; padding-bottom: 25px; transform: translateY(50px); opacity: 0; animation: slideUp 0.8s forwards; position: relative; border: 1px solid rgba(0,0,0,0.05); }
+        .product-card:hover { transform: translateY(-12px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.18); }
+        .image-container { width: 100%; height: 280px; overflow: hidden; position: relative; background: #eee; }
+        .product-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); }
+        .product-card:hover .product-img { transform: scale(1.08); }
+        .product-card h3 { margin: 20px 15px 10px; font-size: 24px; color: var(--dark); font-weight: 700; }
+        .product-card p { color: #7f8c8d; font-size: 15px; padding: 0 20px; margin-bottom: 20px; line-height: 1.5; height: 45px; overflow: hidden; }
+        .price-tag { background: #27ae60; color: white; font-size: 22px; font-weight: 800; padding: 10px 25px; border-radius: 50px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(39,174,96,0.3); border: 2px solid #219152; }
         .cart-modal { position: fixed; top: 0; right: -400px; width: 400px; height: 100%; background: white; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 2000; padding: 30px; display: flex; flex-direction: column; }
         .cart-modal.active { right: 0; }
         .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid var(--light); padding-bottom: 15px; }
@@ -74,7 +78,7 @@
         <a href="#bidhaa" class="btn"><i class="fas fa-shopping-cart"></i> Angalia Bidhaa</a>
     </section>
 
-    <h2 class="section-title" id="bidhaa">Bidhaa Zetu Bora (Sita)</h2>
+    <h2 class="section-title" id="bidhaa">Bidhaa Zetu na Bei</h2>
     <div class="products-grid" id="products-container"></div>
 
     <div class="cart-modal" id="cart-modal">
@@ -106,13 +110,50 @@
             { id: 3, name: "Vifaranga wa Tetea (Layers)", price: 1800, desc: "Vifaranga bora wa kizungu wa kutaga mayai mengi kwa msimu.", img: "https://unsplash.com" },
             { id: 4, name: "Kuku Mtetea wa Mayai (Layer)", price: 12000, desc: "Kuku wa kizungu anayetaga vizuri sana na kwa kiwango cha juu.", img: "https://unsplash.com" },
             { id: 5, name: "Jogoo Mkubwa wa Kizungu", price: 15000, desc: "Jogoo imara na mwenye uzito mkubwa kwa ajili ya nyama au mbegu.", img: "https://unsplash.com" },
-            { id: 6, name: "Kifaranga Chotara wa Kizungu", price: 2000, desc: "Vifaranga waliochanganywa vizuri, wanastahimili magonjwa na kukua haraka.", img: "https://unsplash.com" }
-        ];
 
-        let cart = [];
+{ id: 6, name: "Kifaranga Chotara wa Kizungu", price: 2000, desc: "Vifaranga waliochanganywa vizuri, wanastahimili magonjwa na kukua haraka.", img: "unsplash.com" }
+];
+let cart = [];
+function displayProducts() {
+const container = document.getElementById('products-container');
+container.innerHTML = products.map((p, index) => <div class="product-card" style="animation-delay: ${index * 0.15}s"> <div class="image-container"> <img src="${p.img}" alt="${p.name}" class="product-img"> </div> <h3>${p.name}</h3> <p>${p.desc}</p> <div class="price-tag">Tsh ${p.price.toLocaleString()} /=</div> <div> <button class="btn" onclick="addToCart(${p.id})"><i class="fas fa-shopping-basket"></i> Nunua Sasa</button> </div> </div>).join('');
+}
+function toggleCart() { document.getElementById('cart-modal').classList.toggle('active'); }
+function addToCart(id) {
+const product = products.find(p => p.id === id);
+const exists = cart.find(item => item.id === id);
+if(exists) { exists.quantity++; } else { cart.push({...product, quantity: 1}); }
+updateCart();
+document.getElementById('cart-modal').classList.add('active');
+}
+function removeFromCart(id) {
+cart = cart.filter(item => item.id !== id);
+updateCart();
+}
+function updateCart() {
+const countEl = document.getElementById('cart-count');
+const itemsContainer = document.getElementById('cart-items-container');
+const totalEl = document.getElementById('cart-total-price');
+let totalPrice = 0;
+countEl.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+itemsContainer.innerHTML = cart.map(item => {
+totalPrice += (item.price * item.quantity);
+return <div class="cart-item"> <div class="cart-item-details"> <h4>${item.name} (x${item.quantity})</h4> <div class="remove-item" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i> Ondoa</div> </div> <div style="font-weight:bold; color:var(--secondary);">Tsh ${(item.price * item.quantity).toLocaleString()}</div> </div>;
+}).join('');
+totalEl.textContent = Tsh ${totalPrice.toLocaleString()};
+}
+function sendOrder() {
+if(cart.length === 0) { alert("Kikapu chako kiko wazi! Tafadhali weka bidhaa kwanza."); return; }
+let text = "Habari Baba Bavon! Naomba kuagiza bidhaa zifuatazo:\n\n";
+cart.forEach(item => { text += - ${item.name} (Idadi: ${item.quantity}) - Tsh ${(item.price * item.quantity).toLocaleString()}\n; });
+let total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+text += \n*Jumla Kuu: Tsh ${total.toLocaleString()}*\n\nTafadhali niandalie mzigo wangu!;
+window.open(https://wa.me{encodeURIComponent(text)}, '_blank');
+}
+window.onload = displayProducts;
 
-        function displayProducts() {
-            const container = document.getElementById('products-container');
-            container.innerHTML = products.map((p, index) => `
-                <div class="product-card" style="animation-delay: ${index * 0.15}s">
-                    <img src="${p.img}" alt="${p.name}" class="product-img">
+
+
+Kama utahitaji nikupe maelekezo ya **jinsi ya kuiweka hewani (live)** kupitia mifumo ya bure kama *GitHub Pages* au *Netlify* ili wateja waanze kuingia, niambie!
+
+
